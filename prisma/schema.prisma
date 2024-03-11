@@ -6,3 +6,23 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Consultorio {
+  id       Int    @id @default(autoincrement())
+  nome     String
+  cnes     String @unique
+  senha    String
+  medicos  Medico @relation(fields: [medicoId], references: [id])
+  medicoId Int
+
+  @@map("consultorios")
+}
+
+model Medico {
+  id            Int           @id @default(autoincrement())
+  nome          String
+  especialidade String
+  Consultorio   Consultorio[]
+
+  @@map("medicos")
+}
