@@ -8,11 +8,11 @@ datasource db {
 }
 
 model Consultorio {
-  id       Int    @id @default(autoincrement())
+  id       Int     @id @default(autoincrement())
   nome     String
-  cnes     String @unique
+  cnes     String  @unique
   senha    String
-  medicos  Medico @relation(fields: [medicoId], references: [id])
+  medicos  Medico? @relation(fields: [medicoId], references: [id])
   medicoId Int
 
   @@map("consultorios")
