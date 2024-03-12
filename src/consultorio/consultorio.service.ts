@@ -28,4 +28,8 @@ export class ConsultorioService {
     async buscarConsultorios(): Promise<ConsultorioDto[]> {
         return await this.prisma.consultorio.findMany();
     }
+
+    async buscaroConsultorioCnes(cnes: string): Promise<ConsultorioDto> {
+        return await this.prisma.consultorio.findUnique({ where: { cnes } });
+    }
 }

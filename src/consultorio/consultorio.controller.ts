@@ -10,8 +10,9 @@ export class ConsultorioController {
     @Post()
     async create(@Body() data: ConsultorioDto, @Res() res: Response) {
         const result = await this.consultorioService.criarConsultorio(data);
+        const { senha: _, medicos: __, ...response } = result;
 
-        return res.status(HttpStatus.CREATED).json(result);
+        return res.status(HttpStatus.CREATED).json(response);
 
     }
 

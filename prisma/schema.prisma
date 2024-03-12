@@ -13,7 +13,7 @@ model Consultorio {
   cnes     String  @unique
   senha    String
   medicos  Medico? @relation(fields: [medicoId], references: [id])
-  medicoId Int
+  medicoId Int?
 
   @@map("consultorios")
 }

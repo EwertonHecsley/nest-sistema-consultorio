@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsOptional, IsString, Max, Min, min, minLength } from "class-validator";
+import { IsNotEmpty, IsOptional, IsString, MaxLength, MinLength } from "class-validator";
 
 export class ConsultorioDto {
 
@@ -12,8 +12,8 @@ export class ConsultorioDto {
 
     @IsNotEmpty({ message: 'O campo senha é obrigatório.' })
     @IsString()
-    @Min(4, { message: 'Tamanho mínimo da senha deve ser 4 caracteres.' })
-    @Max(8, { message: 'Tamanho máximo da senha deve ser 8 caracteres.' })
+    @MinLength(4, { message: 'Tamanho mínimo da senha deve ser 4 caracteres.' })
+    @MaxLength(8, { message: 'Tamanho máximo da senha deve ser 8 caracteres.' })
     senha: string;
 
     @IsOptional()
