@@ -22,4 +22,12 @@ export class MedicoService {
     async listarMedicos(): Promise<MedicoDto[]> {
         return await this.prisma.medico.findMany();
     }
+
+    async buscarMedicoPorId(id: number): Promise<MedicoDto> {
+        return await this.prisma.medico.findUnique({ where: { id } });
+    }
+
+    async deletarMedico(id: number) {
+        return await this.prisma.medico.delete({ where: { id } });
+    }
 }
