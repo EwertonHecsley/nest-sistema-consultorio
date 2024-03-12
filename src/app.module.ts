@@ -5,6 +5,7 @@ import { CryptografiaService } from './cryptografia/cryptografia.service';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { ConsultaModule } from './consulta/consulta.module';
+import { MedicoModule } from './medico/medico.module';
 
 @Module({
   imports: [
@@ -14,7 +15,8 @@ import { ConsultaModule } from './consulta/consulta.module';
     DatabaseModule,
     ConsultorioModule,
     AuthModule,
-    ConsultaModule],
+    ConsultaModule,
+    MedicoModule],
   controllers: [],
   providers: [CryptografiaService],
 })
