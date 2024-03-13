@@ -6,6 +6,7 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { ConsultaModule } from './consulta/consulta.module';
 import { MedicoModule } from './medico/medico.module';
+import { PacienteModule } from './paciente/paciente.module';
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { MedicoModule } from './medico/medico.module';
     ConsultorioModule,
     AuthModule,
     ConsultaModule,
-    MedicoModule],
+    MedicoModule,
+    PacienteModule],
   controllers: [],
   providers: [CryptografiaService],
 })
